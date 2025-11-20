@@ -12,15 +12,15 @@ st.sidebar.markdown(
     "<h1 style='text-align: center;'>acciTRENDS</h1>",
     unsafe_allow_html=True
 )
-st.sidebar.image(r"D:\acciTRENDS\logo.png")
+st.sidebar.image(r"logo.png")
 st.sidebar.caption('Analyses road accident counts in India for the years 2018 — 2022')
 option = st.sidebar.selectbox('Select one' ,['Overall Analysis' ,'Safer states & Union Territory','Dangerous States & Union Territory', 'State Comparison','Union Territories comparison' ])
 
 # function for loading data and saving into cache
 @st.cache_data
 def load_data():
-    df_states = pd.read_csv(r"D:\acciTRENDS\datasets\states_dataset.csv", index_col=0)
-    df_ut = pd.read_csv(r"D:\acciTRENDS\datasets\ut_dataset.csv", index_col=0)
+    df_states = pd.read_csv(r"datasets/states_dataset.csv", index_col=0)
+    df_ut = pd.read_csv(r"datasets/ut_dataset.csv", index_col=0)
     return df_states, df_ut
 
 df_states, df_ut = load_data()
